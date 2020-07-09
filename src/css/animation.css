@@ -1,0 +1,18 @@
+.home-page, .about, .full-album, .blog-container, .contact, .image-list{
+   
+    animation: transitionIn 0.55s;
+    
+  }
+  
+@keyframes transitionIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(-30deg);
+  }
+  
+  0% {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+    

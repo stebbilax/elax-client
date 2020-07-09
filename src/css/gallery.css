@@ -1,0 +1,226 @@
+body{
+    font-family: 'Montserrat', sans-serif;}
+
+.image-list{
+    margin: 2% 8% 0 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 9px 20px;
+    position: relative;
+    transition: 3s;
+}
+
+.image-list img{
+    width: 100%;
+}
+.individual-picture{
+    position:relative;
+    transition: 1.5s;
+    
+}
+
+.hover-album{
+    position:absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+    background-color: rgb(180, 180, 180);
+    text-align: center;
+    opacity: 0%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.hover-album p{
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 5em;
+    color: blanchedalmond;
+    padding: 10%;
+}
+
+
+
+.individual-picture:hover .hover-album{
+    opacity: 70%;
+    
+}
+.individual-picture:hover{
+    transform: scale(1.04);
+    z-index: 5;
+}
+
+.individual-album-picture{
+    cursor: pointer;
+}
+
+.full-album img{
+    width: 100%;
+}
+.album-photo{
+    position:absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+    background-color: rgb(180, 180, 180);
+    text-align: center;
+    opacity: 0%;
+    cursor: pointer;
+    transition: 1s;
+}
+.album-photo p{
+    visibility: hidden;
+}
+    
+.black-out{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 95%;
+    visibility: hidden;
+}
+.img-container{
+    
+    position: relative;
+    width: auto;
+    height: 100%;
+    text-align: center;
+    z-index: 101;  
+}
+
+.open-image{
+    max-width: 100%;
+    height: 42%;
+    z-index: 102;
+    position: absolute;
+
+
+}
+
+.img-container img{
+    height: 100%;
+    width: auto;
+    
+    
+}
+
+.open-image i{
+    position: absolute;
+    z-index: 102;
+    transform: scale(8);
+    color: white;
+    top: 50%;
+    opacity: 20%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.open-image i:hover{
+    opacity: 30%;
+}
+
+.left-arrow{
+    left:5%;
+}
+.right-arrow{
+    right:5%;
+}
+
+.info-container{
+    height: 30%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-flow: row wrap;
+    margin: 3em 5em 0 5em;
+}
+.left-info{
+    flex:1;
+}
+.close-button{
+    background: none;
+    border: none;
+    cursor: pointer;;
+    flex:1;
+    color: blanchedalmond;
+    position: relative;
+    margin: 2em;
+    /* transform: translateX(-50%) scale(0.5, 0.5); */
+    /* left: 17%; */
+    
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    font-style: italic;
+    font-weight: 600;
+}
+.sales-info{
+    background: rgb(158, 131, 80);
+    background: linear-gradient(90deg, rgba(242,202,126,0.6671043417366946) 20%, rgba(217,147,61,0.7819502801120448) 94%);
+    border-radius: 2em;
+    flex:1;
+    text-align: center;
+    
+    color: blanchedalmond;
+}
+.sales-info h2{
+    font-size: 2em;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+.sales-info p{
+   padding: 0 2em 0 2em;
+}
+
+.back-button {
+    position: relative;
+    border: none;
+    font-size: 2em;
+    padding-left: 2em;
+    padding-top: 2em;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+.back-button h2{
+    text-decoration: none;
+
+}
+
+
+@media screen and (max-width: 768px){
+
+    .image-list{
+      margin: 0;
+      padding: 0;
+    }
+    .hover-album{
+        opacity: 70%;
+    }
+    .full-album{
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    .full-album img{
+        width: 63%;
+        height: auto;
+        padding: 0;
+    }
+        
+    .full-album .image-list{
+        
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-gap: 9px 10px;
+        position: relative;
+        transition: 3s;
+    }
+
+}

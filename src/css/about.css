@@ -1,0 +1,60 @@
+/* ------------------------About------------------------ */
+#about{
+    text-align: center;
+    overflow-x: hidden;
+    padding: 2% 0 0 0 ;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  #about img{
+    width: 60%;
+    /* padding: 10%; */
+    border-radius: 4em;
+  }
+  
+  #about .intro{
+    font-weight: 500;
+  }
+  
+  #about .about-text{
+    letter-spacing: 0.2em;
+    line-height: 2em;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #666361;
+    text-align: left;
+    margin: 2em 17em 2em 17em;
+  }
+  
+  @media screen and (max-width: 768px){
+    .body{
+      overflow-x: hidden;
+    }
+    #about{
+      text-align: center;
+      
+      padding: 3% 0 0 0 ;
+    }
+    
+    #about img{
+      width: 90%;
+      /* padding: 10%; */
+      border-radius: 2em;
+    }
+    
+    #about .intro{
+      font-weight: 500;
+    }
+    
+    #about .about-text{
+      padding: 10% 4% 2% 4%;
+      margin: 0 0 0 1em;
+      letter-spacing: 0.2em;
+      line-height: 2em;
+      font-size: 1.2rem;
+      font-weight: 400;
+      width: 90%;
+      
+      
+    }
+  }

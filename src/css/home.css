@@ -1,0 +1,162 @@
+.home-page{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.home-content{
+    width: 100%;
+    height: 100vh;
+}
+
+.first-container{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    padding: 5em;
+
+}
+.first-container-img{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    shape-outside: circle();
+    margin-right: 3rem;
+    -webkit-shape-outside:circle();
+    float: left;
+
+}
+    
+    
+.first-container img{
+    width: auto;
+    height: 100%;
+    margin-left: -80px;
+    float: left;
+}
+    
+.first-container-text{
+    position: relative;
+    width: 35%;
+    height:100%;
+    float:left;
+    top: 6.5em;
+    
+}
+.welcome{
+    text-align: left;
+    align-items: center;
+    height: 14vh;
+}
+.welcome h2{
+    font-size: 2.5em;
+    font-weight: 500;
+}
+.text{
+    font-size: 1.2em;
+    line-height: 1.7em;
+    padding: 1em;
+}
+    
+
+.link{
+    text-align: left;
+    padding-top: 2em;
+}
+.link a{
+    text-decoration: none;
+    color: #8b796c;
+    font-size: 1.4em;
+    font-style: italic;
+    font-weight: 500;
+}
+   
+.second-container{
+    position: relative;
+}
+    
+@media screen and (max-width: 768px){
+    .slider{
+        height: 35vh;
+    }
+
+    .first-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: start;
+        width: 100%;
+        height: 190vh;
+        padding: 1em;
+    
+    }
+    .first-container-img{
+        display: inline-block;
+        position: absolute;
+        overflow: hidden;
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        shape-outside: circle();
+        margin-right: 1rem;
+        -webkit-shape-outside:circle();
+        
+        
+    
+    }
+        
+        
+    .first-container img{
+        width: auto;
+        height: 100%;
+        margin-left: -80px;
+        float: left;
+    }
+        
+    .first-container-text{
+        position: relative;
+        width: 100%;
+        height:100%;
+        top: 18.5em;
+        /* visibility: hidden; */
+    }
+    .welcome{
+        text-align: center;
+        align-items: center;
+        height: 14vh;
+    }
+    .welcome h2{
+        font-size: 2.5em;
+        font-weight: 500;
+    }
+    .text{
+        font-size: 1.2em;
+        line-height: 1.7em;
+        padding: 1em;
+    }
+        
+    
+    .link{
+        text-align: center;
+        padding-top: 2em;
+    }
+    .link a{
+        text-decoration: none;
+        color: #8b796c;
+        font-size: 1.4em;
+        font-style: italic;
+        font-weight: 500;
+    }
+    .footer{
+        display: none;
+    }
+}

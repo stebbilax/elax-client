@@ -1,0 +1,43 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  /* position: relative;
+  background: #e2dedb;
+  color: #b3aca7;
+  color: #c86015; */
+}
+
+.byebye{
+  display: none;
+}
+
+@media screen and (max-width: 768px){
+
+  .page-container{
+    width: 100%;
+  }
+
+}
+  
+.main-container{
+  animation: transitionIn 0.75s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+  
+
+
+
+

@@ -25,7 +25,7 @@ class HomePageBlog extends React.Component {
             url: "https://elax-api.herokuapp.com/api/v1/blogposts"
         })
         if (this._isMounted) {
-            this.setState({ blogPosts: response.data.data })
+            this.setState({ blogPosts: response.data })
         }
 
     }

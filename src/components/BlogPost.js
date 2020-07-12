@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const BlogPost = (props) => {
 
+    useEffect(() => {
+        currentPost()
+        return function cleanUp(){
+            const closeBtn = document.querySelector(".close")
+            
+            closeBtn.removeEventListener("click", closeCurrentPost)
+            document.removeEventListener("click", closeWindow)
+            console.log("cleanUp");
+            
 
+        }
+    })
 
     const currentPost = () => {
+        console.log("current");
+        
         const blogText = document.querySelector(".blog-text")
         const closeBtn = document.querySelector(".close")
         const currentPost = document.querySelector(".current-post");
@@ -18,14 +31,19 @@ const BlogPost = (props) => {
         blogText.scrollIntoView();
         // Add event listeners to close window
         closeBtn.addEventListener("click", closeCurrentPost)
-        document.addEventListener("click", function closeWindow(event) {
-            if (!currentPost.contains(event.target)) {
-                document.removeEventListener('click', closeWindow)
-                closeCurrentPost();
-            }
-        }, { once: true })
+        document.addEventListener("click", closeWindow)
+        // }, { once: true })
     }
 
+    const closeWindow = (event) =>{
+        const currentPost = document.querySelector(".current-post");
+
+        if (!currentPost.contains(event.target)) {
+            console.log("closeWindow");
+            
+            closeCurrentPost();
+        }
+    }
 
     const closeCurrentPost = () => {
 
@@ -45,7 +63,7 @@ const BlogPost = (props) => {
 
 
     return (
-        <div className="current-post-container" onLoad={() => currentPost()}>
+        <div className="current-post-container">
             <div className="grey-out"></div>
             <div className="current-post">
                 <div className="blog-text">

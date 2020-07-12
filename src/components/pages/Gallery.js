@@ -26,7 +26,7 @@ class Gallery extends React.Component {
             method: 'GET',
             url: "https://elax-api.herokuapp.com/api/v1/albums"
         })
-        this.setState({ albums: response.data.data })
+        this.setState({ albums: response.data })
     }
 
     componentWillUnmount() {

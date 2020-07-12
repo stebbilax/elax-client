@@ -19,11 +19,11 @@ class Home extends React.Component {
             method: 'GET',
             url: "https://elax-api.herokuapp.com/api/v1/albums/5efb4a5c74d2a30017489839"
         })
-        if (response.data.data && this._isMounted) {
-            this.setState({ pictures: response.data.data.pictures })
-        }
+        if (response.data && this._isMounted) {
+            this.setState({ pictures: response.data.pictures })
+        }        
 
-
+        
         this.adjustFooterBottom();
         AOS.init({
             duration: 1000
@@ -35,11 +35,16 @@ class Home extends React.Component {
         this._isMounted = false;
     }
 
+    // componentDidUpdate = () =>{
+    //     console.log(this.state);
+        
+    // }
+
 
 
     adjustFooterBottom = () => {
         const footer = document.querySelector("footer");
-        footer.style.bottom = "-64em";
+        footer.style.bottom = "-88em";
     }
 
 

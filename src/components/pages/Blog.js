@@ -15,6 +15,7 @@ class Blog extends React.Component {
 
     componentDidMount = async () => {
         this._isMounted = true;
+        this.turnOnLoading();
 
         const response = await axios({
             method: "GET",
@@ -22,6 +23,7 @@ class Blog extends React.Component {
         })
         if (this._isMounted) {
             this.setState({ blogPosts: response.data.reverse() })
+            this.turnOffLoading();
         }
 
         this.adjustFooterBottom();
@@ -59,8 +61,17 @@ class Blog extends React.Component {
     }
 
 
+    turnOffLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "1.5s";
+        setTimeout(() => { loader.style.opacity = "0%"; }, 1000);
 
-
+    }
+    turnOnLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "0s";
+        loader.style.opacity = "100%";
+    }
 
     render() {
         return (

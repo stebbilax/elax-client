@@ -14,6 +14,8 @@ class Home extends React.Component {
 
     componentDidMount = async () => {
         this._isMounted = true;
+        this.turnOnLoading();
+
 
         const response = await axios({
             method: 'GET',
@@ -21,9 +23,10 @@ class Home extends React.Component {
         })
         if (response.data && this._isMounted) {
             this.setState({ pictures: response.data.pictures })
-        }        
+            this.turnOffLoading();
+        }
 
-        
+
         this.adjustFooterBottom();
         AOS.init({
             duration: 1000
@@ -37,10 +40,20 @@ class Home extends React.Component {
 
     // componentDidUpdate = () =>{
     //     console.log(this.state);
-        
+
     // }
 
+    turnOffLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "1.5s";
+        setTimeout(() => { loader.style.opacity = "0%"; }, 1000);
 
+    }
+    turnOnLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "0s";
+        loader.style.opacity = "100%";
+    }
 
     adjustFooterBottom = () => {
         const footer = document.querySelector("footer");

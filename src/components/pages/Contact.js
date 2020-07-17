@@ -1,6 +1,7 @@
 import React from "react";
 import emailjs from "emailjs-com"
 import AOS from "aos";
+import axios from "axios";
 
 import "aos/dist/aos.css";
 import Message from "../Message";
@@ -20,6 +21,7 @@ class Contact extends React.Component {
     }
 
     componentDidMount() {
+        this.turnOffLoading();
         if (this.props.location.state) {
             this.setState({
                 messageInput: "Hi. \n\nI would like to inquire about the availability and price of " + this.props.location.state.pictureName.currentTitle + "."
@@ -29,6 +31,9 @@ class Contact extends React.Component {
     componentDidUpdate() {
         AOS.refresh();
     }
+    componentWillUnmount = () => {
+        this.turnOnLoading();
+    }
 
 
 
@@ -36,19 +41,25 @@ class Contact extends React.Component {
         event.preventDefault();
         const templateId = 'elax';
         this.renderLoadingScreen()
-        this.sendEmail(templateId, { message_html: this.state.messageInput, from_name: this.state.nameInput, reply_to: this.state.emailInput })
+        this.sendEmail(this.state.messageInput, this.state.nameInput, this.state.emailInput)
     }
 
-    sendEmail = (templateId, variables) => {
-        emailjs.send('gmail', templateId, variables, "user_OmSjMEnjJybeIHPgmEExL")
-        emailjs.send()
-            .then(res => {
-                this.removeLoadingScreen();
+    sendEmail = async (msg, name, email) => {
+        try {
+            const response = await axios({
+                method: 'post',
+                url: 'https://elax-api.herokuapp.com/api/v1/email',
+                data: {
+                    email: email,
+                    text: msg,
+                    name: 'Elax -- ' + name
+                }
             })
-            .catch(err => {
-                console.error('Failure: ', err)
-                this.removeLoadingScreen(err);
-            })
+            this.removeLoadingScreen()
+        } catch (error) {
+            console.log(error);
+            this.removeLoadingScreen(error);
+        }
 
         this.clearInputs();
     }
@@ -98,8 +109,18 @@ class Contact extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
+    }
 
+    turnOffLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "0s";
+        setTimeout(() => { loader.style.opacity = "0%"; }, 0);
 
+    }
+    turnOnLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "0s";
+        loader.style.opacity = "100%";
     }
 
 

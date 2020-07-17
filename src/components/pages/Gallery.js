@@ -21,24 +21,41 @@ class Gallery extends React.Component {
     }
 
     componentDidMount = async () => {
+        this.turnOnLoading();
         // document.querySelector("body").classList.toggle("overflow-hidden")
         const response = await axios({
             method: 'GET',
             url: "https://elax-api.herokuapp.com/api/v1/albums"
         })
-        this.setState({ albums: response.data })
+        if (response) {
+            this.setState({ albums: response.data })
+            console.log(response);
+            this.turnOffLoading();
+        }
     }
 
     componentWillUnmount() {
+        this.turnOnLoading();
         // document.querySelector("body").classList.toggle("overflow-hidden")
 
     }
 
 
-
     // Set selected album and turn on redirect in state
     setRedirect = (album) => {
         this.setState({ redirect: !this.state.redirect, selectedAlbum: album })
+    }
+
+    turnOffLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "1.5s";
+        setTimeout(() => { loader.style.opacity = "0%"; }, 1000);
+
+    }
+    turnOnLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "0s";
+        loader.style.opacity = "100%";
     }
 
 

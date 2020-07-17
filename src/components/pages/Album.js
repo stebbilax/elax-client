@@ -17,11 +17,13 @@ class Album extends React.Component {
     }
 
     componentDidMount() {
+        this.turnOnLoading();
         const imageList = document.querySelector(".image-list");
         imageList.style.gridTemplateColumns = " repeat(auto-fill, minmax(400px, 1fr))"
         // imageList.style.gridGap = "10.5px 29px"
 
         this.setState({ album: this.props.location.state })
+        setTimeout(() => { this.turnOffLoading() }, 1500);
     }
     componentDidUpdate() {
         if (this.state.selectedPic.length === 0) {
@@ -42,6 +44,18 @@ class Album extends React.Component {
         this.setState({ prevScroll: x })
 
         this.setState({ selectedPic: "" })
+    }
+
+    turnOffLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "1.5s";
+        setTimeout(() => { loader.style.opacity = "0%"; }, 1000);
+
+    }
+    turnOnLoading = () => {
+        const loader = document.querySelector(".lds-ring-big")
+        loader.style.transition = "0s";
+        loader.style.opacity = "100%";
     }
 
     render() {

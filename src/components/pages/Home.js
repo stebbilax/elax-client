@@ -19,7 +19,7 @@ class Home extends React.Component {
 
         const response = await axios({
             method: 'GET',
-            url: "https://elax-api.herokuapp.com/api/v1/albums/5efb4a5c74d2a30017489839"
+            url: "https://elax-api.herokuapp.com/api/v1/albums/5f130bf66934420017e565e8"
         })
         if (response.data && this._isMounted) {
             this.setState({ pictures: response.data.pictures })

@@ -31,6 +31,7 @@ class Gallery extends React.Component {
             this.setState({ albums: response.data })
             console.log(response);
             this.turnOffLoading();
+            this.removeSlideshow();
         }
     }
 
@@ -40,6 +41,10 @@ class Gallery extends React.Component {
 
     }
 
+    removeSlideshow = () => {
+        const result = this.state.albums.filter(album => album.name != 'slideshow')
+        this.setState({ albums: result })
+    }
 
     // Set selected album and turn on redirect in state
     setRedirect = (album) => {

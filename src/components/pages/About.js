@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // import "../../css/about.css"
 
 const About = () => {
-
+    useEffect(() => {
+        const loader = document.querySelector(".lds-ring-big");
+        loader.style.opacity = "0%";
+    })
 
 
     return (

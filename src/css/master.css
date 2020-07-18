@@ -25,7 +25,7 @@
     font-weight: 400;
     color: #666361;
     text-align: left;
-    margin: 2em 17em 2em 17em;
+    margin: 2em 12em 2em 12em;
   }
   .about-nav-icons{
     display: none;
@@ -844,7 +844,7 @@
     
 }
 .footer {
-    background-color: #ffffff;
+    background-color: rgb(235, 235, 235);
 
     width: 100%;
     text-align: center;
@@ -1825,7 +1825,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      transform: translateY(-90%) translateX(30%);
+      transform: translateY(-130%) translateX(30%);
       
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
@@ -1845,7 +1845,7 @@
         
     .picture-container{
         position: relative;
-        margin-top: 17em;
+        margin-top: 23em;
         margin-bottom: 8em;
         align-items: center;
         height: 45em;

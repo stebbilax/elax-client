@@ -24,12 +24,12 @@ class App extends React.Component {
         return (
             <div className="page-container">
                 <BrowserRouter>
-                    <Route exact path="/admin" component={Admin} />
                     <Navbar />
                     <div className="black-out"></div>
                     <div className="lds-ring-big"><div></div><div></div><div></div><div></div></div>
                     <div className="main-container">
                         <Route exact path="/" component={Home} />
+                        <Route exact path="/admin" component={Admin} />
                         <Route exact path="/gallery" component={Gallery} />
                         <Route exact path="/about" component={About} />
                         <Route exact path="/contact" component={Contact} />

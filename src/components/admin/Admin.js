@@ -1,19 +1,11 @@
-import React, { Component } from "react";
-import { Admin, Resource, ListGuesser } from "react-admin";
-import jsonServerProvider from 'ra-data-json-server'
+import React from "react";
 
-const dataProvider = jsonServerProvider('https://elax-api.herokuapp.com/api/v1')
-
-
-class AdminPanel extends Component {
-
-
-    render() {
-        return (
-            <Admin dataProvider={dataProvider}>
-                <Resource name="albums" list={ListGuesser} />
-            </Admin>
-        );
-    }
+const Admin = () => {
+    return (
+        <div className="admin">
+            <p>Hello</p>
+        </div>
+    )
 }
-export default AdminPanel;
+
+export default Admin;

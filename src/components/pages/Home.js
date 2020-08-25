@@ -75,7 +75,7 @@ class Home extends React.Component {
                                 <h2>Welcome!</h2>
                             </div>
                             <div className="text">
-                                <p>We are Stan & Jane and together we are Stan Seaton Photography.
+                                <p>Welcome to Elin Laxdal Photography.
                                 <br></br>
                                     <br></br>
                                 We have worked together as a team for 16 years. Over this time we have travelled to some amazing and beautiful locations from places just around the corner to the other side of the world to photograph people and document special moments in their lives.

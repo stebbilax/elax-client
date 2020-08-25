@@ -21,7 +21,7 @@
   #about .about-text{
     letter-spacing: 0.2em;
     line-height: 2em;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 400;
     color: #666361;
     text-align: left;
@@ -1903,6 +1903,7 @@
         padding-top: 3em;
         /* top: 5em; */
         margin-bottom: 10em;
+        margin-top: 10em;
         z-index: 900;
         
     }
@@ -2258,7 +2259,7 @@ flex: 2;
 }
 
 .admin-edit-blogpost-text {
-  width: 63em;
+  width: 53em;
   height: auto;
   min-height: 40em;
   margin: 0px;

@@ -13,6 +13,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "emailjs-com": "^2.4.1",
+    "firebase-tools": "^8.9.0",
     "ra-data-json-server": "^3.7.0",
     "ra-data-simple-rest": "^3.5.5",
     "react": "^16.13.1",

@@ -6,7 +6,7 @@ const createPicture = async (file, title, body, token, id) => {
     formData.append('name', title)
     formData.append('description', body)
     try {
-        const res = await axios.post(`https://elax-api.herokuapp.com/api/v1/albums/${id}/pictures`, formData, {
+        await axios.post(`https://elax-api.herokuapp.com/api/v1/albums/${id}/pictures`, formData, {
             'headers': {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': `Bearer ${token}`
@@ -22,7 +22,7 @@ const createBlogpost = async (file, title, body, token) => {
     formData.append('name', title)
     formData.append('body', body)
     try {
-        const res = await axios.post(`https://elax-api.herokuapp.com/api/v1/blogposts`, formData, {
+        await axios.post(`https://elax-api.herokuapp.com/api/v1/blogposts`, formData, {
             'headers': {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': `Bearer ${token}`
@@ -34,7 +34,7 @@ const createBlogpost = async (file, title, body, token) => {
 }
 const createAlbum = async (title, token) => {
     try {
-        const res = await axios.post(`https://elax-api.herokuapp.com/api/v1/albums`, {
+        await axios.post(`https://elax-api.herokuapp.com/api/v1/albums`, {
             name: title
         }, {
             'headers': {

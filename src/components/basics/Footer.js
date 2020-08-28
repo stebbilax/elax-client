@@ -9,13 +9,13 @@ class Footer extends React.Component {
                 <footer className="grid-item footer hideThis">
                     <div className="icons">
                         <a href="https://www.google.com">
-                            <img src="./img/facebook-square.png" />
+                            <img alt="social media link" src="./img/facebook-square.png" />
                         </a>
                         <a href="https://www.google.com">
-                            <img src="./img/flickr-square.png" />
+                            <img alt="social media link" src="./img/flickr-square.png" />
                         </a>
                         <a href="https://www.google.com">
-                            <img src="./img/instagram.png" />
+                            <img alt="social media link" src="./img/instagram.png" />
                         </a>
                     </div>
                 </footer>

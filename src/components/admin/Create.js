@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import { TextField, Input, Select, MenuItem, InputLabel, FormControl } from '@material-ui/core';
 import axios from "axios";
 
 import { CreateHelper } from "./CreateHelper";
-import { refresh } from 'aos';
 
 
 
@@ -112,7 +110,7 @@ const Create = (props) => {
             return (
                 <div className="admin-edit-picture">
                     <h2>{currentType}</h2>
-                    <img style={{ width: "30%", height: "auto" }} src={fileUrl} />
+                    <img alt="create photo" style={{ width: "30%", height: "auto" }} src={fileUrl} />
                     <Input type="file" onChange={e => onFileChange(e)} />
                     <TextField name="name" className={classes.textArea} id='standard-basic' value={nameText} onChange={handleChange} />
                     <textarea name="body" className="admin-edit-blogpost-text" value={bodyText} onChange={handleChange} />

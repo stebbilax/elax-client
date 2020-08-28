@@ -1,5 +1,4 @@
 import React from "react";
-import emailjs from "emailjs-com"
 import AOS from "aos";
 import axios from "axios";
 
@@ -39,14 +38,13 @@ class Contact extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const templateId = 'elax';
         this.renderLoadingScreen()
         this.sendEmail(this.state.messageInput, this.state.nameInput, this.state.emailInput)
     }
 
     sendEmail = async (msg, name, email) => {
         try {
-            const response = await axios({
+            await axios({
                 method: 'post',
                 url: 'https://elax-api.herokuapp.com/api/v1/email',
                 data: {

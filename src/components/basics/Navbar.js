@@ -111,13 +111,13 @@ class Navbar extends React.Component {
           </div>
           <div className="nav-icons">
             <a href="https://www.google.com">
-              <img src="./img/facebook-square.png" />
+              <img alt="social media link" src="./img/facebook-square.png" />
             </a>
             <a href="https://www.google.com">
-              <img src="./img/flickr-square.png" />
+              <img alt="social media link" src="./img/flickr-square.png" />
             </a>
             <a href="https://www.google.com">
-              <img src="./img/instagram.png" />
+              <img alt="social media link" src="./img/instagram.png" />
             </a>
           </div>
           <div className="burger" onClick={this.openNav}>

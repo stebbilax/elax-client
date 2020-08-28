@@ -4,23 +4,21 @@ const BlogPost = (props) => {
 
     useEffect(() => {
         currentPost()
-        return function cleanUp(){
+        return function cleanUp() {
             const closeBtn = document.querySelector(".close")
-            
+
             closeBtn.removeEventListener("click", closeCurrentPost)
             document.removeEventListener("click", closeWindow)
             console.log("cleanUp");
-            
+
 
         }
     })
 
     const currentPost = () => {
-        console.log("current");
-        
+
         const blogText = document.querySelector(".blog-text")
         const closeBtn = document.querySelector(".close")
-        const currentPost = document.querySelector(".current-post");
         const curPost = document.querySelector(".current-post-container");
 
         if (curPost) {
@@ -35,12 +33,12 @@ const BlogPost = (props) => {
         // }, { once: true })
     }
 
-    const closeWindow = (event) =>{
+    const closeWindow = (event) => {
         const currentPost = document.querySelector(".current-post");
 
         if (!currentPost.contains(event.target)) {
             console.log("closeWindow");
-            
+
             closeCurrentPost();
         }
     }

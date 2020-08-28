@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSwipeable, Swipeable } from 'react-swipeable'
+import { Swipeable } from 'react-swipeable'
 import AOS from "aos";
 // import "../css/slideshow.css";
 import "aos/dist/aos.css";
@@ -168,7 +168,7 @@ class SlideShow extends React.Component {
                     <Swipeable onSwipedLeft={() => this.handleSwipe("left")} onSwipedRight={() => this.handleSwipe("right")}>
                         <div data-aos="slide-right" className="picture-container">
                             {/* <i onClick={this.handleCloseSlide} className="close fas fa-times"></i> */}
-                            <img className={this.state.currentURL, "actual-pic"} src={`${this.state.currentURL}`}></img>
+                            <img alt="pic" className={this.state.currentURL, "actual-pic"} src={`${this.state.currentURL}`}></img>
                         </div>
                     </Swipeable>
                     <div className="right-arrow">

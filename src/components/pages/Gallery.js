@@ -42,7 +42,7 @@ class Gallery extends React.Component {
     }
 
     removeSlideshow = () => {
-        const result = this.state.albums.filter(album => album.name != 'slideshow')
+        const result = this.state.albums.filter(album => album.name !== 'slideshow')
         this.setState({ albums: result })
     }
 
@@ -74,7 +74,7 @@ class Gallery extends React.Component {
             }
         }
         const renderAlbumCover = this.state.albums.map((album, index) => {
-            const openAlbum = <Redirect to="/album" />
+            // const openAlbum = <Redirect to="/album" />
             if (album.pictures.length < 1) {
                 return
             }

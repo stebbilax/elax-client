@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Button from '@material-ui/core/Button';
 import axios from "axios";
 
@@ -34,7 +33,7 @@ const Edit = (props) => {
     const deleteObj = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.delete(`https://elax-api.herokuapp.com/api/v1/${currentType}s/${id}`, {
+            await axios.delete(`https://elax-api.herokuapp.com/api/v1/${currentType}s/${id}`, {
                 'headers': {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
@@ -51,7 +50,7 @@ const Edit = (props) => {
     const submit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.patch(`https://elax-api.herokuapp.com/api/v1/${currentType}s/${id}`, {
+            await axios.patch(`https://elax-api.herokuapp.com/api/v1/${currentType}s/${id}`, {
                 name: nameText,
                 description: bodyText
             }, {
@@ -99,7 +98,7 @@ const Edit = (props) => {
     const renderEditor = () => {
         return (
             <div className="admin-edit-picture">
-                <img src={url} />
+                <img alt="edit-picture" src={url} />
                 <TextField name="name" className={classes.textArea} id='standard-basic' value={nameText} onChange={handleChange} />
                 <textarea name="body" className="admin-edit-blogpost-text" value={bodyText} onChange={handleChange} />
             </div>

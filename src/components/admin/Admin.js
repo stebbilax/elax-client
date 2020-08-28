@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, TextField, Button } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 import Header from "./Header";
@@ -12,9 +12,7 @@ const useStyles = makeStyles(() => ({
 
 
 const Admin = () => {
-    const classes = useStyles();
-    const [nameText, setNameText] = useState("");
-    const [passwordText, setPasswordText] = useState("");
+
     const [loggedIn, setLoggedIn] = useState(false);         //<<<------CHANGE
     const [token, setToken] = useState("");
 

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 
 const PictureCard = (props) => {
     const classes = useStyles();
-    const { imgUrl, title, id, openFunc, picture } = props;
+    const { imgUrl, title, openFunc, picture } = props;
     return (
         <Card onClick={() => openFunc(picture, "picture")} className="admin-picture-card" style={{ marginBottom: "1em" }}>
             <CardHeader title={title} />
